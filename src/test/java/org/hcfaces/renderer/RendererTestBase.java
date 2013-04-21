@@ -3,7 +3,6 @@ package org.hcfaces.renderer;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -38,8 +37,9 @@ public class RendererTestBase {
 		environment = new HtmlUnitEnvironment();
 		environment.withResource("/WEB-INF/faces-config.xml",
 				"faces-config.xml");
-		environment.withWebRoot(new File(this.getClass().getResource(".")
-				.toURI()));
+//		environment.withWebRoot(new File(this.getClass().getResource(".")
+//				.toURI()));
+		environment.withWebRoot("org/hcfaces/test");
 		environment.start();
 		// environment.getWebClient().setJavaScriptEnabled(false);
 	}
